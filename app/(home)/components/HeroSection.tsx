@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <div className='min-h-[90vh] flex flex-col-reverse gap-14 lg:gap-0 lg:flex-row items-center justify-between'>
         <div className='space-y-10 text-center lg:text-left'>
-        <h1 className='text-4xl font-bold lg:text-7xl'>Hey👋, I'm Abhishek. <br /> 
+        <h1 className='text-4xl font-bold lg:text-7xl'>Hey👋, I&apos;m Abhishek. <br /> 
         <span className='underline text-center underline-offset-8 decoration-green-500'>
             {"Nice to Meet you!"}
             </span></h1>

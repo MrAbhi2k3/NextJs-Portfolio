@@ -3,7 +3,6 @@ import { TiHtml5 } from "react-icons/ti";
 import { FaCss3Alt, FaReact } from "react-icons/fa6";
 import { FaJsSquare, FaDocker, FaPython, FaNodeJs } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiTailwindcss, SiKoyeb } from "react-icons/si";
-import Title from './Title';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { DirectionAwareHover } from '@/components/ui/direction-aware-hover';

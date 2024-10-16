@@ -2,7 +2,6 @@ import React from 'react'
 
 const Title = ({
     text,
-    className,
 }:{
     text:string;
     className?:string;
