@@ -24,7 +24,7 @@ export const BackgroundBeamsWithCollision = ({
     if (parentRef.current) {
       setParentRect(parentRef.current.getBoundingClientRect());
     }
-    
+
     // Add listeners to update when the window resizes
     const handleResize = () => {
       if (containerRef.current) {
@@ -50,7 +50,7 @@ export const BackgroundBeamsWithCollision = ({
       repeatDelay: 3,
       delay: 2,
     },
-    // ...other beams
+    // You can add more beam options here
   ];
 
   return (
@@ -61,9 +61,9 @@ export const BackgroundBeamsWithCollision = ({
         className
       )}
     >
-      {beams.map((beam) => (
+      {beams.map((beam, index) => (
         <CollisionMechanism
-          key={beam.initialX + "beam-idx"}
+          key={index}
           beamOptions={beam}
           containerRect={containerRect}
           parentRect={parentRect}
@@ -100,7 +100,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
->(({ containerRect, parentRect, beamOptions = {} }) => {
+>(({ containerRect, parentRect, beamOptions = {} }, ref) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -113,6 +113,8 @@ const CollisionMechanism = React.forwardRef<
   const [cycleCollisionDetected, setCycleCollisionDetected] = useState(false);
 
   useEffect(() => {
+    let animationFrameId: number;
+
     const checkCollision = () => {
       if (
         beamRef.current &&
@@ -136,16 +138,14 @@ const CollisionMechanism = React.forwardRef<
           setCycleCollisionDetected(true);
         }
       }
+
+      animationFrameId = requestAnimationFrame(checkCollision);
     };
 
-    const animationInterval = setInterval(checkCollision, 50);
+    animationFrameId = requestAnimationFrame(checkCollision);
 
-    return () => clearInterval(animationInterval);
-  }, [
-    cycleCollisionDetected,
-    containerRect, // Use containerRect and parentRect from state instead of refs
-    parentRect,
-  ]);
+    return () => cancelAnimationFrame(animationFrameId); // Cleanup on unmount
+  }, [cycleCollisionDetected, containerRect, parentRect]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
@@ -210,7 +210,13 @@ const CollisionMechanism = React.forwardRef<
 
 CollisionMechanism.displayName = "CollisionMechanism";
 
-const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
+const Explosion = ({
+  className,
+  style,
+}: {
+  className?: string;
+  style?: React.CSSProperties;
+}) => {
   const spans = Array.from({ length: 20 }, (_, index) => ({
     id: index,
     initialX: 0,
@@ -220,7 +226,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
   }));
 
   return (
-    <div {...props} className={cn("absolute z-50 h-2 w-2", props.className)}>
+    <div className={cn("absolute z-50 h-2 w-2", className)} style={style}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
