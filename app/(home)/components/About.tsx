@@ -35,7 +35,7 @@ const About = () => {
               alt="First Image"
               width={300}
               height={300}
-              className="w-60 h-96 mt-16 rounded-lg shadow-lg"
+              className="w-60 h-96 mb-16 rounded-lg shadow-lg"
             />
             <Image 
               src="https://i.ibb.co/ZJ53xN8/50097024bab57d94a12e5b9267f75aba95daf0d5-high.webp"

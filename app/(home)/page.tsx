@@ -10,7 +10,7 @@ import Header from './components/Header';
 
 const Page = () => {
   return (
-    <div className='h-full bg-black text-white overflow-hidden relative'>
+    <div className='h-full bg-black text-white overflow-hidden'>
         <Header />
         <BackgroundBeamsWithCollision className="absolute inset-0 z-0" />
       

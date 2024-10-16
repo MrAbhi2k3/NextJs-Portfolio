@@ -6,6 +6,7 @@ import { SiMongodb, SiExpress, SiTailwindcss, SiKoyeb } from "react-icons/si";
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { DirectionAwareHover } from '@/components/ui/direction-aware-hover';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
 const Projects = () => {
     const projects = [
@@ -39,10 +40,11 @@ const Projects = () => {
         },
     ];
 
+    const words = `Here are some of the projects I have worked on:`;
     return (
         <div className='py-10 p-5 sm:p-0 px-10'>
             <div className='text-center mb-6'>
-                <p className='text-lg md:text-xl text-gray-600 mb-2'>Here are some of my projects showcasing my skills and creativity:</p>
+                <TextGenerateEffect className="text-s md:text-xl text-gray-600 mb-2" words={words}/>
                 <h1 className='text-4xl md:text-5xl font-extrabold border-b-2 border-green-500 inline-block -rotate-3'>Projects</h1>
             </div>
 
