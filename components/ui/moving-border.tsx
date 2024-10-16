@@ -15,12 +15,12 @@ export function MovingButton({
 }: {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: React.ElementType; // Specific type for components
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown; // Use unknown to handle other props safely
 }) {
   return (
     <Component
@@ -57,7 +57,7 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   const pathRef = useRef<SVGRectElement | null>(null); // specify type here
   const progress = useMotionValue<number>(0);
@@ -83,7 +83,7 @@ export const MovingBorder = ({
         className="absolute h-full w-full"
         width="100%"
         height="100%"
-        {...otherProps}
+        {...(otherProps as React.SVGProps<SVGSVGElement>)} // Type for SVG props
       >
         <rect fill="none" width="100%" height="100%" rx={rx} ry={ry} ref={pathRef} />
       </svg>

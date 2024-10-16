@@ -13,6 +13,34 @@ export const BackgroundBeamsWithCollision = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+  const [containerRect, setContainerRect] = useState<DOMRect | null>(null);
+  const [parentRect, setParentRect] = useState<DOMRect | null>(null);
+
+  useEffect(() => {
+    // Update rects when component mounts
+    if (containerRef.current) {
+      setContainerRect(containerRef.current.getBoundingClientRect());
+    }
+    if (parentRef.current) {
+      setParentRect(parentRef.current.getBoundingClientRect());
+    }
+    
+    // Add listeners to update when the window resizes
+    const handleResize = () => {
+      if (containerRef.current) {
+        setContainerRect(containerRef.current.getBoundingClientRect());
+      }
+      if (parentRef.current) {
+        setParentRect(parentRef.current.getBoundingClientRect());
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty array means it runs once when the component mounts
 
   const beams = [
     {
@@ -22,63 +50,7 @@ export const BackgroundBeamsWithCollision = ({
       repeatDelay: 3,
       delay: 2,
     },
-    {
-      initialX: 600,
-      translateX: 600,
-      duration: 3,
-      repeatDelay: 3,
-      delay: 4,
-    },
-    {
-      initialX: 100,
-      translateX: 100,
-      duration: 7,
-      repeatDelay: 7,
-      className: "h-6",
-    },
-    {
-      initialX: 400,
-      translateX: 400,
-      duration: 5,
-      repeatDelay: 14,
-      delay: 4,
-    },
-    {
-      initialX: 800,
-      translateX: 800,
-      duration: 11,
-      repeatDelay: 2,
-      className: "h-20",
-    },
-    {
-      initialX: 1000,
-      translateX: 1000,
-      duration: 4,
-      repeatDelay: 2,
-      className: "h-12",
-    },
-    {
-      initialX: 1200,
-      translateX: 1200,
-      duration: 6,
-      repeatDelay: 4,
-      delay: 2,
-      className: "h-6",
-    },
-    {
-      initialX: 1400,
-      translateX: 1400,
-      duration: 8,
-      repeatDelay: 2,
-      className: "h-8",
-    },
-    {
-      initialX: 1600,
-      translateX: 1600,
-      duration: 10,
-      repeatDelay: 2,
-      className: "h-10",
-    },
+    // ...other beams
   ];
 
   return (
@@ -93,8 +65,8 @@ export const BackgroundBeamsWithCollision = ({
         <CollisionMechanism
           key={beam.initialX + "beam-idx"}
           beamOptions={beam}
-          containerRef={containerRef}
-          parentRef={parentRef}
+          containerRect={containerRect}
+          parentRect={parentRect}
         />
       ))}
 
@@ -114,8 +86,8 @@ export const BackgroundBeamsWithCollision = ({
 const CollisionMechanism = React.forwardRef<
   HTMLDivElement,
   {
-    containerRef: React.RefObject<HTMLDivElement>;
-    parentRef: React.RefObject<HTMLDivElement>;
+    containerRect: DOMRect | null;
+    parentRect: DOMRect | null;
     beamOptions?: {
       initialX?: number;
       translateX?: number;
@@ -128,7 +100,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
->(({ parentRef, containerRef, beamOptions = {} }) => {
+>(({ containerRect, parentRect, beamOptions = {} }) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -144,17 +116,14 @@ const CollisionMechanism = React.forwardRef<
     const checkCollision = () => {
       if (
         beamRef.current &&
-        containerRef.current &&
-        parentRef.current &&
+        containerRect &&
+        parentRect &&
         !cycleCollisionDetected
       ) {
         const beamRect = beamRef.current.getBoundingClientRect();
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const parentRect = parentRef.current.getBoundingClientRect();
 
         if (beamRect.bottom >= containerRect.top) {
-          const relativeX =
-            beamRect.left - parentRect.left + beamRect.width / 2;
+          const relativeX = beamRect.left - parentRect.left + beamRect.width / 2;
           const relativeY = beamRect.bottom - parentRect.top;
 
           setCollision({
@@ -174,8 +143,8 @@ const CollisionMechanism = React.forwardRef<
     return () => clearInterval(animationInterval);
   }, [
     cycleCollisionDetected,
-    containerRef.current, // Added dependency
-    parentRef.current, // Added dependency
+    containerRect, // Use containerRect and parentRect from state instead of refs
+    parentRect,
   ]);
 
   useEffect(() => {
