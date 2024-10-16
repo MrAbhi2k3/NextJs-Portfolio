@@ -13,6 +13,9 @@ import {
     SiNextdotjs
 } from "react-icons/si";
 import { FaCloudscale } from "react-icons/fa";
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+
+const words = `Here are the technologies and tools I am proficient in:`;
 
 const Skills = () => {
     const skills = [
@@ -30,7 +33,7 @@ const Skills = () => {
     return (
         <div className="max-w-5xl mx-auto px-8">
             <div className="text-center mb-6">
-                <p className="text-lg md:text-xl text-gray-600 mb-2">Here are the technologies and tools I am proficient in:</p>
+                <TextGenerateEffect className="text-s md:text-xl text-gray-600 mb-2" words={words}/>
                 <h1 className="text-4xl md:text-5xl font-extrabold border-b-2 border-indigo-500 inline-block -rotate-3">Skills 🧑‍💻</h1>
             </div>
             <div className="flex flex-wrap justify-center gap-8 mt-8">
