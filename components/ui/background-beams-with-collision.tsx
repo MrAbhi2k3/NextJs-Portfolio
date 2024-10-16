@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
@@ -65,18 +66,18 @@ export const BackgroundBeamsWithCollision = ({
       className: "h-6",
     },
     {
-        initialX: 1400,
-        translateX: 1400,
-        duration: 8,
-        repeatDelay: 2,
-        className: "h-8",
+      initialX: 1400,
+      translateX: 1400,
+      duration: 8,
+      repeatDelay: 2,
+      className: "h-8",
     },
     {
-        initialX: 1600,
-        translateX: 1600,
-        duration: 10,
-        repeatDelay: 2,
-        className: "h-10",
+      initialX: 1600,
+      translateX: 1600,
+      duration: 10,
+      repeatDelay: 2,
+      className: "h-10",
     },
   ];
 
@@ -85,7 +86,6 @@ export const BackgroundBeamsWithCollision = ({
       ref={parentRef}
       className={cn(
         "h-full md:h-[50rem] relative flex items-center w-full justify-center overflow-hidden",
-        // h-screen if you want bigger
         className
       )}
     >
@@ -172,7 +172,11 @@ const CollisionMechanism = React.forwardRef<
     const animationInterval = setInterval(checkCollision, 50);
 
     return () => clearInterval(animationInterval);
-  }, [cycleCollisionDetected, containerRef]);
+  }, [
+    cycleCollisionDetected,
+    containerRef.current, // Added dependency
+    parentRef.current, // Added dependency
+  ]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
@@ -185,7 +189,7 @@ const CollisionMechanism = React.forwardRef<
         setBeamKey((prevKey) => prevKey + 1);
       }, 2000);
     }
-  }, [collision]);
+  }, [collision.detected, collision.coordinates]);
 
   return (
     <>
