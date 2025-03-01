@@ -58,10 +58,10 @@ const Projects = () => {
                                     className='w-full h-auto space-y-5 cursor-pointer'
                                 >
                                     <div className='space-y-5'>
-                                        <h1 className='text-2xl font-bold'>{project.title}</h1>
+                                        <h1 className='text-xl font-bold'>{project.title}</h1>
                                         <div className='flex items-center justify-center gap-5'>
                                             {project.tech.map((Icon, index) => {
-                                                return <Icon key={index} className='w-8 h-8 text-white' />;
+                                                return <Icon key={index} className='w-4 h-4 text-white' />;
                                             })}
                                         </div>
                                     </div>
