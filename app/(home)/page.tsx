@@ -13,7 +13,8 @@ const Page = () => {
   return (
     <div className='h-full bg-black text-white overflow-hidden'>
         <Header />
-        <BackgroundBeamsWithCollision className="absolute inset-0 z-0" children={undefined} />
+        <BackgroundBeamsWithCollision className="absolute inset-0 z-0">
+          </BackgroundBeamsWithCollision>
       
       {/* Main content area */}
       <div className='relative z-10 bg-grid-black/[0.2] dark:bg-grid-white/[0.05] min-h-screen'>

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import React, { useState } from "react";
 import { SiChatbot } from "react-icons/si";
 import { FaTimes } from "react-icons/fa";
 import { GlowingEffect } from "../../../components/ui/glowing-effect"
@@ -41,7 +42,9 @@ const Contact = () => {
       setFormData({ name: "", email: "", tgUsername: "", subject: "", message: "" });
       
       setTimeout(() => setSuccessMessage(""), 3000);
-    } catch (error) {
+    } catch (error)
+    {
+      console.error(error);
       setSuccessMessage("Failed to send message. Try again.");
     }
   };
@@ -65,7 +68,7 @@ const Contact = () => {
               </button>
             </div>
             <div className="p-4 flex items-center space-x-4">
-              <img src="https://i.ibb.co/0yMtdqqK/sticker-boy-coding-computer-anime-s-creative-design-bold-line-cute-kawaii-st-655090-454640.jpg" alt="Chatbot" className="w-12 h-12 rounded-full" />
+              <Image src="https://i.ibb.co/0yMtdqqK/sticker-boy-coding-computer-anime-s-creative-design-bold-line-cute-kawaii-st-655090-454640.jpg" alt="Chatbot" className="w-12 h-12 rounded-full" />
               <p className="text-xs font-sans font-semibold">Hola! I&apos;m Abhishek. Drop me a message and we&apos;ll get back to you ASAP!</p>
             </div>
             <GlowingEffect glow variant="default" className="absolute inset-0"/>
