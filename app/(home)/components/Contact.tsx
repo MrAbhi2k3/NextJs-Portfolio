@@ -18,11 +18,11 @@ const Contact = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { name, email, tgUsername, subject, message } = formData;
 
@@ -68,7 +68,7 @@ const Contact = () => {
               </button>
             </div>
             <div className="p-4 flex items-center space-x-4">
-              <Image src="https://i.ibb.co/0yMtdqqK/sticker-boy-coding-computer-anime-s-creative-design-bold-line-cute-kawaii-st-655090-454640.jpg" alt="Chatbot" className="w-12 h-12 rounded-full" />
+              <Image src="https://i.ibb.co/0yMtdqqK/sticker-boy-coding-computer-anime-s-creative-design-bold-line-cute-kawaii-st-655090-454640.jpg" alt="Chatbot" className="w-12 h-12 rounded-full" width={200} height={200} />
               <p className="text-xs font-sans font-semibold">Hola! I&apos;m Abhishek. Drop me a message and we&apos;ll get back to you ASAP!</p>
             </div>
             <GlowingEffect glow variant="default" className="absolute inset-0"/>
