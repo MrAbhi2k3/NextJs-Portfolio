@@ -7,8 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin-ext"] });
 
 
-
-
 export const metadata: Metadata = {
   title: "Abhishek Kumar - Sviet @MrAbhi2k3",
   description: "Created By - @MrAbhi2k3",

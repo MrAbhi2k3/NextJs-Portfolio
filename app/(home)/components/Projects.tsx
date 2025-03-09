@@ -22,7 +22,7 @@ const Projects = () => {
             tech: [SiMongodb, SiExpress, FaReact, FaNodeJs],
             link: 'https://github.com/MrAbhi2k3/RecipeSharingCommunity',
             cover: 'https://i.ibb.co/smdcqT3/img4.png',
-            background: 'bg-gradient-to-r from-green-500 to-green-700',
+            background: 'bg-gradient-to-r from-red-500 to-red-700',
         },
         {
             title: 'Telegram FIlestrore Bot',
@@ -44,8 +44,8 @@ const Projects = () => {
     return (
         <div className='py-10 p-5 sm:p-0 px-10'>
             <div className='text-center mb-6'>
-                <TextGenerateEffect className="text-s md:text-xl text-gray-600 mb-2" words={words}/>
-                <h1 className='text-4xl md:text-5xl font-extrabold border-b-2 border-green-500 inline-block -rotate-3'>Projects</h1>
+                <TextGenerateEffect className="text-s md:text-xl font-sans text-gray-600 mb-2" words={words}/>
+                <h1 className='text-4xl md:text-5xl font-extrabold font-sans border-b-2 border-green-500 inline-block -rotate-3'>Projects</h1>
             </div>
 
             <div className='flex flex-wrap justify-center pt-20 gap-10'>

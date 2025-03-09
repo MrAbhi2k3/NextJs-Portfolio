@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MovingButton } from '../../../components/ui/moving-border'
+import Image from 'next/image'
 
 const HeroSection = () => {
   return (
@@ -24,10 +25,10 @@ const HeroSection = () => {
         </div>
         
         <div className='relative'>
-            <div className='w-72 h-72 space-y-3 -rotate-[30deg] relative'>
+            <div className='w-72 h-72 space-y-2 mb-8 -rotate-[0deg] relative'>
                 <div className='flex gap-3 translate-x-8'>
 
-                    <div className='w-32 h-32 rounded-2xl bg-green-500'></div>
+                    {/* <div className='w-32 h-32 rounded-2xl bg-green-500'></div>
 
                     <div className='w-32 h-32 rounded-full bg-indigo-500'></div>
                 </div>
@@ -36,19 +37,21 @@ const HeroSection = () => {
 
                     <div className='w-32 h-32 rounded-2xl bg-indigo-500'></div>
 
-                    <div className='w-32 h-32 rounded-full bg-green-500'></div>
+                    <div className='w-32 h-32 rounded-full bg-green-500'></div> */}
+                    <Image src="https://i.ibb.co/PZ3bdm7H/circulardp.png" alt="Abhishek" className='rounded-full' width={400} height={400} />
                 </div>
 
-                <div className='glow absolute top-[40%] right-1/2 -z-10'>
+                {/* <div className='glow absolute top-[40%] right-1/2 -z-10'>
 
-                </div>
+                </div> */}
             </div>
-            <div className='absolute bottom-5 sm:bottom-14 left-0 sm:-left-10'>
 
             
+            <div className='absolute bottom-5 sm:bottom-14 left-0 sm:-left-10'>
 
-            <MovingButton borderRadius='0.5rem' className='p-3 font-semibold'>
+            <MovingButton borderRadius='0.5rem' className='p-3 font-semibold font-sans text-lg z-20'>
                 <p>Developer 🧑‍💻</p>
+                <div/>
                 </MovingButton>
                 </div>
         </div>

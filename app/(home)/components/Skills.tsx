@@ -12,7 +12,7 @@ import {
     SiMysql,
     SiNextdotjs
 } from "react-icons/si";
-import { FaCloudscale } from "react-icons/fa";
+import { RiFirebaseFill } from "react-icons/ri";
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
 const words = `Here are the technologies and tools I am proficient in:`;
@@ -25,7 +25,7 @@ const Skills = () => {
         { text: 'TypeScript', Icon: SiTypescript },
         { text: 'Git', Icon: SiGit },
         { text: 'Adobe Photoshop', Icon: SiAdobephotoshop },
-        { text: 'Cloudscale', Icon: FaCloudscale },
+        { text: 'Google Firebase', Icon: RiFirebaseFill },
         { text: 'MongoDB', Icon: SiMongodb },
         { text: 'MySQL', Icon: SiMysql },
     ];
@@ -33,8 +33,8 @@ const Skills = () => {
     return (
         <div className="max-w-5xl mx-auto px-8">
             <div className="text-center mb-6">
-                <TextGenerateEffect className="text-s md:text-xl text-gray-600 mb-2" words={words}/>
-                <h1 className="text-4xl md:text-5xl font-extrabold border-b-2 border-indigo-500 inline-block -rotate-3">Skills 🧑‍💻</h1>
+                <TextGenerateEffect className="text-s md:text-xl font-sans text-gray-600 mb-2" words={words}/>
+                <h1 className="text-4xl md:text-5xl font-extrabold font-sans border-b-2 border-indigo-500 inline-block -rotate-3">Skills 🧑‍💻</h1>
             </div>
             <div className="flex flex-wrap justify-center gap-8 mt-8">
                 <HoverEffect items={skills} />

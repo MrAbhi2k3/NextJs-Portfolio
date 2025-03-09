@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -8,13 +10,14 @@ import About from './components/About';
 import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision';
 import Header from './components/Header';
 import Contact from './components/Contact';
+import Donate from './components/Donate';
+
 
 const Page = () => {
   return (
     <div className='h-full bg-black text-white overflow-hidden'>
         <Header />
         <BackgroundBeamsWithCollision className="absolute inset-0 z-0">
-
         <div />
       </BackgroundBeamsWithCollision>
       
@@ -27,8 +30,8 @@ const Page = () => {
         </div>
           
           {/* About section */}
-
-                    <About />
+          
+          <About />
         
         <div className='h-10 xl:h-32 bg-gradient-to-t from-black absolute -bottom-5 left-0 xl:bottom-0 w-full'></div>
       </div>
@@ -37,6 +40,8 @@ const Page = () => {
       <div className='max-w-7xl mx-auto p-5 mt-20 gap-y-12 flex flex-col z-10'>
         <Skills />
         <Projects />
+
+      <Donate />
       </div>
 
       {/* Contact page */}
@@ -49,7 +54,10 @@ const Page = () => {
         <Footer />
       </div>
 
-
+      {/*  Donate Link Routing in nextJS */}
+      {/* <Link href='/donate'>
+      <Donate />
+        </Link> */}
 
     </div>
   );
