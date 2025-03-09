@@ -7,7 +7,7 @@ const Navbar = () => {
     const socials = [
         {
             label: 'GitHub',
-            link: 'https://github.com/MrAhbi2k3',
+            link: 'https://github.com/MrAbhi2k3',
             Icon: FaGithub,
         },
         {
