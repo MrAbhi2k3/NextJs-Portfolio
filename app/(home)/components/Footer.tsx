@@ -36,7 +36,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <Icon className='text-4xl w-8 h-8 hover:scale-125 transition-transform duration-200 shadow-md shadow-gray-500 rounded-full p-2 hover:shadow-lg hover:shadow-gray-700' />
+                <Icon className='text-4xl w-8 h-8 hover:scale-125 transition-transform duration-200 shadow-md shadow-blue-500 rounded-full p-2 hover:shadow-lg hover:shadow-blue-700' />
               </Link>
             );
           })}
