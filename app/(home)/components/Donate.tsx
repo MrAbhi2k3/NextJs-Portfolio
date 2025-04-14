@@ -35,7 +35,7 @@ const Donate = () => {
       title: "Thank You For Your Support! 🙏",
       icon: (
         <Image
-          src="https://i.ibb.co/xKTF703L/pngtree-programmer-it-developer-png-image-13520483.png"
+          src="https://i.postimg.cc/1RpnQsMg/Hacker-PNG-Image.webp"
           width={40}
           height={40}
           alt="Aceternity Logo"
