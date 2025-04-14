@@ -38,7 +38,7 @@ const HeroSection = () => {
                     <div className='w-32 h-32 rounded-2xl bg-indigo-500'></div>
 
                     <div className='w-32 h-32 rounded-full bg-green-500'></div> */}
-                    <Image src="https://i.ibb.co/PZ3bdm7H/circulardp.png" alt="Abhishek" className='rounded-full' width={400} height={400} />
+                    <Image src="https://i.postimg.cc/VkJVJGJC/circulardp.webp" alt="Abhishek" className='rounded-full' width={400} height={400} />
                 </div>
 
                 {/* <div className='glow absolute top-[40%] right-1/2 -z-10'>

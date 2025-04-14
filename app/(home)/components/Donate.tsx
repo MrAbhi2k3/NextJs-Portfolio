@@ -13,6 +13,7 @@ import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 import Link from 'next/link';
 
+
 const Donate = () => {
   const links = [
     {
@@ -68,8 +69,8 @@ const Donate = () => {
         {/* UPI Section */}
         <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <Image
-          src={`https://i.ibb.co/q3kgvW8g/upi.png`}
-          alt="jordans"
+          src={`https://i.postimg.cc/W14PXwhN/upi.png`}
+          alt="Sponsor Image"
           height="400"
           width="400"
           className="object-contain"
@@ -80,7 +81,7 @@ const Donate = () => {
               Scan the QR code or use UPI ID to donate.
             </p>
             <button className="rounded-full w-full h-12 pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold font-sans dark:bg-zinc-800">
-              <Link href='https://donate.mrabhi2k3.me/upi'>
+              <Link href='https://sponsorsde.vercel.app/upi'>
               <span>Donate via UPI</span>
                 </Link>
               <span className="bg-zinc-700 rounded-full w-10 h-10 text-[0.6rem] px-2 py-0 text-white">
@@ -93,8 +94,8 @@ const Donate = () => {
         {/* Crypto Section */}
         <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <Image
-          src={`https://i.ibb.co/JWCxVzg4/worldwide-coin-3d-icon-download-in-png-blend-fbx-gltf-file-formats-crypto-world-and-network-cryptocu.png`}
-          alt="jordans"
+          src={`https://i.postimg.cc/sXY8VMvH/btclogo.webp`}
+          alt="Sponsor Image"
           height="400"
           width="400"
           className="object-contain"
@@ -105,7 +106,7 @@ const Donate = () => {
               Send cryptocurrency to the provided wallet address.
             </p>
             <button className="rounded-full w-full h-12 pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold font-sans dark:bg-zinc-800">
-              <Link href='https://donate.mrabhi2k3.me/crypto'>
+              <Link href='https://sponsorsde.vercel.app/crypto'>
               <span>Donate via Crypto</span>
                 </Link>
               <span className="bg-zinc-700 w-10 h-10 rounded-full text-[0.6rem] px-2 py-0 text-white">
@@ -118,8 +119,8 @@ const Donate = () => {
         {/* PayPal Section */}
         <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <Image
-          src={`https://i.ibb.co/20HmgXyn/Paypal-Icon-Transparent-File.png`}
-          alt="jordans"
+          src={`https://i.postimg.cc/SxRwWQvj/paypal.webp`}
+          alt="Sponsor Image"
           height="400"
           width="400"
           className="object-contain"
@@ -130,7 +131,7 @@ const Donate = () => {
               Use PayPal to make a donation.
             </p>
             <button className="rounded-full w-full h-12 pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold font-sans dark:bg-zinc-800">
-              <Link href='https://donate.mrabhi2k3.me/paypal'>
+              <Link href='https://sponsorsde.vercel.app/paypal'>
               <span>Donate via PayPal</span>
                 </Link>
               <span className="bg-zinc-700 w-10 h-10 rounded-full text-[0.6rem] px-2 py-0 text-white">
