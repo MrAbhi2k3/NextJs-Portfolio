@@ -22,7 +22,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className='border-t-2 py-4'>
+    <div className='border-t-2 py-4 border-neutral-800'>
       <div className='max-w-5xl mx-auto flex flex-col items-center text-center'>
         <div className='flex space-x-6 mb-4'>
           {socials.map((social, index) => {

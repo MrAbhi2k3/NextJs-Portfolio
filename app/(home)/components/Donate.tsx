@@ -1,151 +1,189 @@
 "use client";
-import React from 'react';
-import { FloatingDock } from '@/components/ui/floating-dock';
-import { 
-    FaPaypal,
-    FaBtc,
-    FaRupeeSign,
-    FaCoffee,
- } from "react-icons/fa";
+
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaPaypal,
+  FaBtc,
+  FaRupeeSign,
+  FaCoffee,
+} from "react-icons/fa";
 import { RiTelegramLine } from "react-icons/ri";
 import { SiGithubsponsors } from "react-icons/si";
-import Image from 'next/image';
-import { BackgroundGradient } from '@/components/ui/background-gradient';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { FloatingDock } from "@/components/ui/floating-dock";
 
+const MagneticButton = ({
+  href,
+  text,
+  icon,
+}: {
+  href: string;
+  text: string;
+  icon: React.ReactNode;
+}) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.97 }}
+      className="w-full"
+    >
+      <Link href={href}>
+        <motion.div
+          initial={{ x: -40, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 120, damping: 12 }}
+          whileHover={{ x: 6 }}
+          className="relative w-full h-12 rounded-full bg-black hover:bg-zinc-800 text-white flex items-center justify-between px-5 font-bold text-sm overflow-hidden"
+        >
+          <span>{text}</span>
+          <motion.span
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            className="w-10 h-10 rounded-full bg-zinc-700 flex items-center justify-center"
+          >
+            {icon}
+          </motion.span>
+        </motion.div>
+      </Link>
+    </motion.div>
+  );
+};
 
 const Donate = () => {
   const links = [
     {
-      title: "Donate via UPI",
-      icon: <FaRupeeSign className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "https://donate.mrabhi2k3.me/upi",
+      title: "UPI",
+      icon: <FaRupeeSign className="h-full w-full text-white" />,
+      href: "https://sponsorsde.vercel.app/upi",
     },
     {
-      title: "Donate via GitHub Sponsors",
-      icon: <SiGithubsponsors className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      title: "GitHub Sponsors",
+      icon: <SiGithubsponsors className="h-full w-full text-white" />,
       href: "https://github.com/sponsors/MrAbhi2k3",
     },
     {
-      title: "Donate via Bitcoin",
-      icon: <FaBtc className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "https://donate.mrabhi2k3.me/crypto",
+      title: "Bitcoin",
+      icon: <FaBtc className="h-full w-full text-white" />,
+      href: "https://sponsorsde.vercel.app//crypto",
     },
     {
-      title: "Thank You For Your Support! 🙏",
+      title: "Home",
       icon: (
         <Image
           src="https://i.postimg.cc/1RpnQsMg/Hacker-PNG-Image.webp"
           width={40}
           height={40}
-          alt="Aceternity Logo"
+          alt="logo"
         />
       ),
       href: "/",
     },
     {
-      title: "Donate via Paypal",
-      icon: <FaPaypal className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "https://donate.mrabhi2k3.me/paypal",
+      title: "Paypal",
+      icon: <FaPaypal className="h-full w-full text-white" />,
+      href: "https://sponsorsde.vercel.app/paypal",
     },
     {
-      title: "Buy Me A Coffee",
-      icon: <FaCoffee className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      title: "Coffee",
+      icon: <FaCoffee className="h-full w-full text-white" />,
       href: "https://ko-fi.com/MrAbhi2k3",
     },
     {
-      title: "Telegram Stars",
-      icon: <RiTelegramLine className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      title: "Telegram",
+      icon: <RiTelegramLine className="h-full w-full text-white" />,
       href: "https://t.me/DonateXRobot",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-dark flex flex-col items-center justify-center p-4">
-        <p className='font-sans text-xl'> Want to be My One of the Sponsors or Donor</p>
-      <h1 className="text-4xl font-extrabold mb-8 mt-4 font-sans">Donate</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-black text-white">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="text-lg text-neutral-400"
+      >
+        Want to be one of my sponsors or donors?
+      </motion.p>
 
-        {/* UPI Section */}
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-        <Image
-          src={`https://i.postimg.cc/W14PXwhN/upi.png`}
-          alt="Sponsor Image"
-          height="400"
-          width="400"
-          className="object-contain"
-        />
-          <div className="flex flex-col items-center">
-            <h2 className="text-2xl font-semibold mb-4">UPI</h2>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-              Scan the QR code or use UPI ID to donate.
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="text-4xl md:text-5xl font-extrabold mt-4 mb-12"
+      >
+        Donate
+      </motion.h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
+        <BackgroundGradient className="rounded-[22px] bg-zinc-900 p-6">
+          <Image
+            src="https://i.postimg.cc/W14PXwhN/upi.png"
+            alt="UPI"
+            width={400}
+            height={400}
+            className="object-contain"
+          />
+          <div className="mt-6 space-y-4">
+            <h2 className="text-2xl font-semibold text-center">UPI</h2>
+            <p className="text-sm text-neutral-400 text-center">
+              Scan QR or use UPI ID
             </p>
-            <button className="rounded-full w-full h-12 pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold font-sans dark:bg-zinc-800">
-              <Link href='https://sponsorsde.vercel.app/upi'>
-              <span>Donate via UPI</span>
-                </Link>
-              <span className="bg-zinc-700 rounded-full w-10 h-10 text-[0.6rem] px-2 py-0 text-white">
-                <FaRupeeSign className='text-xl mt-2'/>
-              </span>
-            </button>
+            <MagneticButton
+              href="https://sponsorsde.vercel.app/upi"
+              text="Donate via UPI"
+              icon={<FaRupeeSign className="text-xl" />}
+            />
           </div>
         </BackgroundGradient>
 
-        {/* Crypto Section */}
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-        <Image
-          src={`https://i.postimg.cc/sXY8VMvH/btclogo.webp`}
-          alt="Sponsor Image"
-          height="400"
-          width="400"
-          className="object-contain"
-        />
-          <div className="flex flex-col items-center">
-            <h2 className="text-2xl font-semibold mb-4">Crypto</h2>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-              Send cryptocurrency to the provided wallet address.
+        <BackgroundGradient className="rounded-[22px] bg-zinc-900 p-6">
+          <Image
+            src="https://i.postimg.cc/sXY8VMvH/btclogo.webp"
+            alt="Crypto"
+            width={400}
+            height={400}
+            className="object-contain"
+          />
+          <div className="mt-6 space-y-4">
+            <h2 className="text-2xl font-semibold text-center">Crypto</h2>
+            <p className="text-sm text-neutral-400 text-center">
+              Donate using cryptocurrency
             </p>
-            <button className="rounded-full w-full h-12 pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold font-sans dark:bg-zinc-800">
-              <Link href='https://sponsorsde.vercel.app/crypto'>
-              <span>Donate via Crypto</span>
-                </Link>
-              <span className="bg-zinc-700 w-10 h-10 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                <FaBtc className='text-xl mt-2'/>
-              </span>
-            </button>
+            <MagneticButton
+              href="https://sponsorsde.vercel.app/crypto"
+              text="Donate via Crypto"
+              icon={<FaBtc className="text-xl" />}
+            />
           </div>
         </BackgroundGradient>
 
-        {/* PayPal Section */}
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-        <Image
-          src={`https://i.postimg.cc/SxRwWQvj/paypal.webp`}
-          alt="Sponsor Image"
-          height="400"
-          width="400"
-          className="object-contain"
-        />
-          <div className="flex flex-col items-center">
-            <h2 className="text-2xl font-semibold mb-4">PayPal</h2>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
-              Use PayPal to make a donation.
+        <BackgroundGradient className="rounded-[22px] bg-zinc-900 p-6">
+          <Image
+            src="https://i.postimg.cc/SxRwWQvj/paypal.webp"
+            alt="Paypal"
+            width={400}
+            height={400}
+            className="object-contain"
+          />
+          <div className="mt-6 space-y-4">
+            <h2 className="text-2xl font-semibold text-center">PayPal</h2>
+            <p className="text-sm text-neutral-300 text-center">
+              Secure PayPal donation
             </p>
-            <button className="rounded-full w-full h-12 pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold font-sans dark:bg-zinc-800">
-              <Link href='https://sponsorsde.vercel.app/paypal'>
-              <span>Donate via PayPal</span>
-                </Link>
-              <span className="bg-zinc-700 w-10 h-10 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                <FaPaypal className='text-xl mt-2'/>
-              </span>
-            </button>
+            <MagneticButton
+              href="https://sponsorsde.vercel.app/paypal"
+              text="Donate via PayPal"
+              icon={<FaPaypal className="text-xl" />}
+            />
           </div>
         </BackgroundGradient>
       </div>
-      <div className="mt-20 z-20">
-        <FloatingDock
-          mobileClassName="translate-y-20"
-          items={links}
-        />
+
+      <div className="mt-24 bg-black/30 rounded-full p-4">
+        <FloatingDock items={links} mobileClassName="translate-y-16" />
       </div>
     </div>
   );
