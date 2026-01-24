@@ -15,14 +15,14 @@ const Projects = () => {
             tech: [TiHtml5, FaCss3Alt, SiTailwindcss, FaJsSquare],
             link: 'https://github.com/MrAbhi2k3/Canva-Premium-Invites',
             cover: 'https://i.ibb.co/S3j21TN/img3.png',
-            background: 'bg-gradient-to-r from-blue-500 to-blue-700',
+            background: 'bg-gradient-to-r from-blue-500 to-red-700',
         },
         {
             title: 'Recipe Sharing Community',
             tech: [SiMongodb, SiExpress, FaReact, FaNodeJs],
             link: 'https://github.com/MrAbhi2k3/RecipeSharingCommunity',
             cover: 'https://i.ibb.co/smdcqT3/img4.png',
-            background: 'bg-gradient-to-r from-red-500 to-red-700',
+            background: 'bg-gradient-to-r from-gray-500 to-yellow-700',
         },
         {
             title: 'Telegram FIlestrore Bot',
@@ -38,11 +38,25 @@ const Projects = () => {
             cover: 'https://i.ibb.co/025wKt3/img1.png',
             background: 'bg-gradient-to-r from-green-500 to-green-700',
         },
+        {
+            title: 'Wallpapers Downloader',
+            tech: [SiMongodb, SiExpress, FaReact, FaNodeJs],
+            link: 'https://wallpapers.teleroidgroup.store',
+            cover: 'https://i.ibb.co/025wKt3/img1.png',
+            background: 'bg-gradient-to-r from-green-500 to-purple-700',
+        },
+        {
+            title: 'Instagram Downloader',
+            tech: [SiMongodb, SiExpress, FaReact, FaNodeJs],
+            link: 'https://instadownloader.teleroidgroup.store',
+            cover: 'https://i.ibb.co/025wKt3/img1.png',
+            background: 'bg-gradient-to-r from-pink-500 to-yellow-700',
+        },
     ];
 
     const words = `Here are some of the projects I have worked on:`;
     return (
-        <div className='py-10 p-5 sm:p-0 px-10'>
+        <div className='py-10 p-5 sm:p-10 px-10 overflow-hidden'>
             <div className='text-center mb-6'>
                 <TextGenerateEffect className="text-s md:text-xl font-sans text-gray-600 mb-2" words={words}/>
                 <h1 className='text-4xl md:text-5xl font-extrabold font-sans border-b-2 border-green-500 inline-block -rotate-3'>Projects</h1>
