@@ -1,5 +1,4 @@
 
-import { view } from "framer-motion";
 import React from "react";
 import { FaDownload } from "react-icons/fa";
 

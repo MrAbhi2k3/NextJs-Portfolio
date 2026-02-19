@@ -12,6 +12,12 @@ const HeroSection = () => {
             Hi, I am Abhishek. I work on clean frontend interfaces, MERN stack applications,
             and practical tools that solve real user needs.
           </p>
+          {/* <a
+            href="mailto:abhishek.kumar.idev@gmail.com"
+            className="inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+          >
+            Contact Me  
+          </a> */}
           <a
             className="inline-flex px-5 py-2.5 "
           >
