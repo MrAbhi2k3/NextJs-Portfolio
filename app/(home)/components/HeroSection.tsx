@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Resume from "./Resume";
 
 const HeroSection = () => {
   return (
@@ -12,11 +13,11 @@ const HeroSection = () => {
             and practical tools that solve real user needs.
           </p>
           <a
-            href="mailto:mailus@mrabhi2k3.me"
-            className="inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+            className="inline-flex px-5 py-2.5 "
           >
-            Contact Me
+            <Resume />
           </a>
+
         </div>
 
         <div className="mx-auto">

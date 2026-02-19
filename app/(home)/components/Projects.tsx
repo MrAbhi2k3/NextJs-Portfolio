@@ -3,9 +3,9 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Canva Blogs",
+    title: "Canva Access Platform",
     description: "Platform for Canva templates and premium invites.",
-    link: "https://github.com/MrAbhi2k3/Canva-Premium-Invites",
+    link: "https://canva.teleroidgroup.store",
   },
   {
     title: "Recipe Sharing Community",
@@ -20,8 +20,18 @@ const projects = [
   {
     title: "Music WebApp",
     description: "Music platform with playlist support.",
-    link: "https://github.com/MrAbhi2k3/Music-webApp",
+    link: "https://github.com/MrAbhi2k3/MusicWebapp",
   },
+  {
+    title: "DeepSeek Clone",
+    description: "Clone of DeepSeek AI platform.",
+    link: "https://github.com/MrAbhi2k3/DeepSeek-Clone",
+  },
+  {
+    title: "Terabox Extractor",
+    description: "Python script to extract files from Terabox.",
+    link: "https://github.com/MrAbhi2k3/TeraboxLinkExtractor",
+  }
 ];
 
 const Projects = () => {

@@ -5,6 +5,7 @@ import {
   SiNextdotjs,
   SiPython,
   SiReact,
+  SiSupabase,
   SiTypescript,
 } from "react-icons/si";
 import { RiFirebaseFill } from "react-icons/ri";
@@ -16,8 +17,9 @@ const skills = [
   { text: "Python", Icon: SiPython },
   { text: "MongoDB", Icon: SiMongodb },
   { text: "MySQL", Icon: SiMysql },
-  { text: "Git", Icon: SiGit },
+  { text: "Supabase", Icon: SiSupabase },
   { text: "Firebase", Icon: RiFirebaseFill },
+  { text: "Git", Icon: SiGit },
 ];
 
 const Skills = () => {
