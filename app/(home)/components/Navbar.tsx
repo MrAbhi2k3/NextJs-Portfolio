@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { FaGithub, FaInstagram, FaTelegram } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
@@ -20,9 +20,9 @@ const Navbar = () => {
       Icon: FaInstagram,
     },
     {
-      label: "Telegram",
-      link: "https://t.me/MrAbhi2k3",
-      Icon: FaTelegram,
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/KumaarAbhishek/",
+      Icon: FaLinkedin,
     },
   ];
 
