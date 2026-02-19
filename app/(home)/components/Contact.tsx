@@ -53,13 +53,13 @@ const Contact = () => {
     <div>
       <button
         onClick={() => setIsFormOpen(!isFormOpen)}
-        className="fixed bottom-5 right-5 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition z-10"
+        className="fixed bottom-5 right-5 z-[60] cursor-pointer rounded-full bg-blue-600 p-4 text-white shadow-lg transition hover:bg-blue-700"
       >
         <SiChatbot className="w-6 h-6" />
       </button>
 
       {isFormOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-end items-end p-4 z-50">
+        <div className="fixed inset-0 z-[70] flex items-end justify-end bg-gray-800 bg-opacity-50 p-4">
           <div className="bg-gray-900 text-white rounded-lg shadow-lg w-full max-w-sm relative overflow-hidden">
             <div className="bg-gray-800 p-4 flex justify-between items-center">
               <h2 className="text-xl font-sans font-bold">Send Us a Message</h2>
