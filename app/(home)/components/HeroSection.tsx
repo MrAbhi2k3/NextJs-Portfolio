@@ -1,65 +1,37 @@
-import React from 'react'
-import Link from 'next/link'
-import { MovingButton } from '../../../components/ui/moving-border'
-import Image from 'next/image'
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <div className='min-h-[90vh] flex flex-col-reverse gap-14 lg:gap-0 lg:flex-row items-center justify-between'>
-        <div className='space-y-10 text-center lg:text-left'>
-        <h1 className='text-4xl font-bold lg:text-7xl'>Hey👋, I&apos;m Abhishek. <br /> 
-        <span className='underline text-center underline-offset-8 decoration-green-500'>
-            {"Nice to Meet you!"}
-            </span></h1>
-        <p className='font-sans font-normal text-justify text-s md:max-w-96 text-neutral-300'>
-            {"I’m a passionate full-stack developer with expertise in the MERN stack, dedicated to creating a user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I thrive on transforming ideas into innovative solutions. My background in graphic design allows me to blend aesthetics with functionality, ensuring a seamless user experience. I’m also skilled in social media management, helping brands connect authentically with their audience."}
-            </p>
-
-        {/* <p className='text-lg'>I'm currently working on a few projects, and I'm always looking for new opportunities.</p> */}
-
-        {/* <Title text='Get in touch 📤'/> */}
-        <Link href={"mailto:mailus@mrabhi2k3.me"} className='inline-block '>
-        <div>
-        </div>
-        </Link>
-        </div>
-        
-        <div className='relative'>
-            <div className='w-72 h-72 space-y-2 mb-8 -rotate-[0deg] relative'>
-                <div className='flex gap-3 translate-x-8'>
-
-                    {/* <div className='w-32 h-32 rounded-2xl bg-green-500'></div>
-
-                    <div className='w-32 h-32 rounded-full bg-indigo-500'></div>
-                </div>
-
-                <div className='flex gap-3 translate-x-8'>
-
-                    <div className='w-32 h-32 rounded-2xl bg-indigo-500'></div>
-
-                    <div className='w-32 h-32 rounded-full bg-green-500'></div> */}
-                    <Image src="https://i.postimg.cc/VkJVJGJC/circulardp.webp" alt="Abhishek" className='rounded-full' width={400} height={400} />
-                </div>
-
-                {/* <div className='glow absolute top-[40%] right-1/2 -z-10'>
-
-                </div> */}
-            </div>
-
-            
-            <div className='absolute bottom-5 sm:bottom-14 left-0 sm:-left-10'>
-
-            <MovingButton borderRadius='0.5rem' className='p-3 font-semibold font-sans text-lg z-20'>
-                <p>Developer 🧑‍💻</p>
-                <div/>
-                </MovingButton>
-                </div>
-        </div>
+    <section className="mx-auto mt-8 max-w-5xl rounded-3xl border border-border bg-card/60 p-6 shadow-sm sm:p-10">
+      <div className="grid items-center gap-8 md:grid-cols-[1.4fr,1fr]">
+        <div className="space-y-5">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Full Stack Developer</p>
+          <h1 className="text-4xl font-bold leading-tight sm:text-6xl">I build simple and useful digital products.</h1>
+          <p className="max-w-xl text-base text-muted-foreground">
+            Hi, I am Abhishek. I work on clean frontend interfaces, MERN stack applications,
+            and practical tools that solve real user needs.
+          </p>
+          <a
+            href="mailto:mailus@mrabhi2k3.me"
+            className="inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+          >
+            Contact Me
+          </a>
         </div>
 
-
-    
-  )
-}
+        <div className="mx-auto">
+          <Image
+            src="https://i.postimg.cc/VkJVJGJC/circulardp.webp"
+            alt="Abhishek"
+            width={280}
+            height={280}
+            className="h-52 w-52 rounded-full border-4 border-primary/30 object-cover shadow-lg sm:h-64 sm:w-64"
+            priority
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default HeroSection;
