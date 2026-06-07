@@ -17,7 +17,7 @@ const Navbar = () => {
         },
         {
             label: 'Telegram',
-            link: 'https://t.me/MrAbhi2k3',
+            link: 'https://t.me/HelplessBoi',
             Icon: FaTelegram,
         }
     ];
