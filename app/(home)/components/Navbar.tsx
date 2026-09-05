@@ -15,27 +15,30 @@ const Navbar = () => {
       Icon: FaGithub,
     },
     {
-      label: "Instagram",
-      link: "https://www.instagram.com/mrabhi_2k3/",
-      Icon: FaInstagram,
-    },
-    {
       label: "LinkedIn",
       link: "https://www.linkedin.com/in/KumaarAbhishek/",
       Icon: FaLinkedin,
+    },
+    {
+      label: "Instagram",
+      link: "https://www.instagram.com/mrabhi_2k3/",
+      Icon: FaInstagram,
     },
   ];
 
   const isDark = resolvedTheme === "dark";
 
   return (
-    <nav className="sticky top-12 z-30">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border border-border/80 bg-card/90 px-4 py-3 shadow-md backdrop-blur">
-        <Link href="/" className="text-base font-bold sm:text-lg">
-          MrAbhi2k3.
+    <nav className="sticky top-2 z-30 mb-8 w-full">
+      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-2 border-2 sm:border-4 border-foreground bg-card p-2 sm:p-3 shadow-brutal sm:shadow-brutal-lg">
+        <Link
+          href="/"
+          className="bg-primary px-2 sm:px-3 py-1 text-sm sm:text-xl font-black tracking-tight text-primary-foreground border-2 border-foreground uppercase transition hover:translate-x-0.5 hover:translate-y-0.5"
+        >
+          MrAbhi2k3_
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {socials.map((social) => {
             const Icon = social.Icon;
 
@@ -46,9 +49,9 @@ const Navbar = () => {
                 aria-label={social.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full p-2 text-foreground/80 transition hover:bg-secondary hover:text-foreground"
+                className="border-2 border-foreground bg-secondary p-1.5 sm:p-2 text-secondary-foreground shadow-brutal-sm transition hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0"
               >
-                <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                <Icon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
               </Link>
             );
           })}
@@ -57,10 +60,13 @@ const Navbar = () => {
             type="button"
             onClick={() => setTheme(isDark ? "light" : "dark")}
             aria-label="Toggle theme"
-            className="relative rounded-full border border-border bg-secondary p-2 text-foreground transition hover:opacity-85"
+            className="border-2 border-foreground bg-accent p-1.5 sm:p-2 text-accent-foreground shadow-brutal-sm transition hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0"
           >
-            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 sm:h-5 sm:w-5" />
-            <Moon className="absolute left-2 top-2 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 sm:left-2 sm:top-2 sm:h-5 sm:w-5" />
+            {isDark ? (
+              <Sun className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+            ) : (
+              <Moon className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+            )}
           </button>
         </div>
       </div>

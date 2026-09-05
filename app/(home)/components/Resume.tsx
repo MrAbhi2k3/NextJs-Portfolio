@@ -1,27 +1,17 @@
-
 import React from "react";
 import { FaDownload } from "react-icons/fa";
 
-
-
-const resumeUrl = "https://github.com/user-attachments/files/25412455/abhi.resume.pdf";
-
 const Resume = () => {
-    const handleViewResume = () => {
-        window.open(resumeUrl, "_blank");
-    };
-
-    return (
-        <div className="flex flex-col items-center justify-center gap-6">
-            <button
-                className="px-6 py-2 bg-primary rounded-full text-white hover:bg-blue-700  items-center gap-2 inline-flex text-sm font-semibold text-primary-foreground transition hover:opacity-90"
-                onClick={handleViewResume}
-            > 
-                <FaDownload className="text-white" />
-                Resume  
-            </button>
-        </div>
-    );
+  return (
+    <a
+      href="/resume.pdf"
+      download="Abhishek_Kumar_Resume.pdf"
+      className="brutal-btn w-full sm:w-auto bg-brutal-cyan text-black px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-black tracking-wider gap-2 cursor-pointer relative z-20 pointer-events-auto select-auto"
+    >
+      <FaDownload className="h-3.5 w-3.5" />
+      <span>RESUME.PDF</span>
+    </a>
+  );
 };
 
 export default Resume;

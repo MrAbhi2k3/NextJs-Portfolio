@@ -11,20 +11,22 @@ import Contact from "./components/Contact";
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/20">
-      <Header />
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-background text-foreground transition-colors duration-150">
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-20 dark:opacity-25 brutal-dots-bg" />
 
-      <main className="mx-auto w-full px-4 pb-10 pt-16 sm:px-6">
-        <Navbar />
-        <HeroSection />
-        <Skills />
-        <Projects />
-        <Donate />
-      </main>
+      <div className="relative z-10">
+        <Header />
 
-      <Contact />
+        <main className="mx-auto w-full max-w-5xl px-2 sm:px-4 md:px-6 pt-4 pb-12">
+          <Navbar />
+          <HeroSection />
+          <Skills />
+          <Projects />
+          <Donate />
+        </main>
 
-      <div className="mt-6">
+        <Contact />
+
         <Footer />
       </div>
     </div>
