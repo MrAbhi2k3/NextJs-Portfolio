@@ -1,0 +1,9 @@
+wzgram
+beautifulsoup4
+requests
+python-dotenv
+pymongo
+dnspython
+cloudscraper
+warpcrypto
+aiohttp

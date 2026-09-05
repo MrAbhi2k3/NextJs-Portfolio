@@ -4,7 +4,6 @@ import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
 import { PluginAPI } from "tailwindcss/types/config";
 import tailwindcssAnimate from 'tailwindcss-animate';
 
-
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -48,6 +47,14 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        brutal: {
+          yellow: '#FFE600',
+          lime: '#00FF66',
+          cyan: '#00F0FF',
+          pink: '#FF4384',
+          orange: '#FF6B00',
+          purple: '#A855F7',
+        },
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
@@ -57,15 +64,22 @@ const config: Config = {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        none: '0px',
+        sm: '2px',
+        md: '4px',
+        lg: '6px',
+        xl: '8px',
+      },
+      boxShadow: {
+        'brutal-sm': '2px 2px 0px 0px currentColor',
+        'brutal': '4px 4px 0px 0px currentColor',
+        'brutal-lg': '6px 6px 0px 0px currentColor',
+        'brutal-xl': '8px 8px 0px 0px currentColor',
       },
     },
   },
   plugins: [
     tailwindcssAnimate,
-    // addVariablesForColors,
     function ({ matchUtilities, theme }: { matchUtilities: PluginAPI["matchUtilities"]; theme: PluginAPI["theme"] }) {
       matchUtilities(
         {
@@ -90,16 +104,5 @@ const config: Config = {
     },
   ],
 };
-
-// function addVariablesForColors({ addBase, theme }: { addBase: (value: Record<string, unknown>) => void; theme: (value: string) => PluginAPI["theme"] }) {
-//   const allColors = flattenColorPalette(theme("colors"));
-//   const newVars = Object.fromEntries(
-//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-//   );
-
-//   addBase({
-//     ":root": newVars,
-//   });
-// }
 
 export default config;
