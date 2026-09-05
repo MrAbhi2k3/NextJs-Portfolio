@@ -108,7 +108,7 @@ const Projects = () => {
                   <span>{project.tag}</span>
                 </span>
                 <span className="text-[10px] font-mono font-bold uppercase text-muted-foreground">
-                  // {project.title.toLowerCase().replace(/\s+/g, '-')}
+                  {"//"} {project.title.toLowerCase().replace(/\s+/g, '-')}
                 </span>
               </div>
 
