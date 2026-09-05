@@ -15,8 +15,11 @@ const ysabeauOffice = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Abhishek Kumar - Sviet @MrAbhi2k3",
-  description: "Created By - @MrAbhi2k3",
+  title: "Abhishek Kumar - Full Stack Developer",
+  description: "Portfolio of Abhishek Kumar - Building WebApps, Android Apps, Linux Images and Rest APIs",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
