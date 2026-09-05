@@ -1,4 +1,4 @@
-import { FaGraduationCap, FaCalendarAlt, FaMapMarkerAlt, FaAward } from "react-icons/fa";
+import { FaGraduationCap, FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 const educationHistory = [
   {
