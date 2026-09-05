@@ -4,8 +4,8 @@ import { FaEnvelope, FaBolt, FaTerminal, FaCode } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="brutal-card mx-auto w-full max-w-5xl bg-card p-4 sm:p-7 md:p-9 mb-10 overflow-hidden">
-      <div className="grid items-center gap-6 md:grid-cols-[1.35fr,1fr]">
+    <section className="brutal-card mx-auto w-full max-w-7xl bg-card p-4 sm:p-7 md:p-10 mb-10 overflow-hidden">
+      <div className="grid items-center gap-8 md:grid-cols-[1.3fr,1fr]">
         <div className="space-y-4 sm:space-y-5">
           <div className="flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center gap-1.5 border-2 border-foreground bg-brutal-lime px-2.5 py-1 text-[10px] sm:text-xs font-black uppercase text-black shadow-brutal-sm">
@@ -18,18 +18,20 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3rem] font-black leading-[1.08] tracking-tight uppercase break-words">
-            BUILDING WEBAPPS, ANDROID APPS, LINUX IMAGES & REST APIS.
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-muted-foreground">
+            Hi, my name is <span className="text-foreground font-black underline decoration-primary decoration-2">Abhishek</span>
+          </p>
+
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-black leading-[1.08] tracking-tight uppercase break-words">
+            Turning ideas into{" "}
+            <span className="inline-block border-2 sm:border-3 border-foreground bg-brutal-yellow px-2 py-0.5 text-black shadow-brutal-sm -rotate-1 hover:rotate-0 transition-transform">
+              realities
+            </span>
           </h1>
 
-          <div className="border-l-4 border-primary pl-3 sm:pl-4 py-1 space-y-2">
-            <p className="text-xs sm:text-base font-bold leading-relaxed text-foreground break-words">
-              Hi, I am <span className="underline decoration-primary decoration-4">Abhishek Kumar</span>.
-            </p>
-            <p className="text-xs sm:text-sm font-semibold leading-relaxed text-muted-foreground break-words">
-              Architecting fast web applications, cross-platform Android apps, optimized custom Linux OS distributions, and scalable high-concurrency REST APIs engineered for performance, resilience, and real-world deployment.
-            </p>
-          </div>
+          <p className="text-xs sm:text-base font-semibold leading-relaxed text-muted-foreground break-words max-w-xl">
+            I am a full stack software engineer with a passion for building performant, scalable, and user-friendly WebApps, Android Apps, custom Linux Images and resilient REST APIs. I turn complex problems into robust, production-ready solutions.
+          </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 pt-2">
             <Resume />
@@ -54,17 +56,29 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="mx-auto flex justify-center w-full max-w-[240px] sm:max-w-[270px]">
-          <div className="relative border-3 sm:border-4 border-foreground bg-brutal-pink p-2 sm:p-3 shadow-brutal-lg rotate-1 hover:rotate-0 transition-transform w-full">
+        <div className="relative mx-auto flex justify-center items-center w-full max-w-[280px] sm:max-w-[320px] py-4">
+          <div className="absolute -top-3 -left-3 z-20 border-2 sm:border-3 border-foreground bg-brutal-yellow px-2.5 py-1 text-xs font-black shadow-brutal-sm text-black -rotate-6">
+            &lt;/&gt;
+          </div>
+
+          <div className="absolute -bottom-2 -left-2 z-20 flex h-10 w-10 items-center justify-center border-2 sm:border-3 border-foreground bg-brutal-cyan text-black shadow-brutal-sm rounded-full font-black text-sm rotate-12">
+            ⚡
+          </div>
+
+          <div className="absolute -bottom-4 -right-3 z-20 border-2 border-foreground bg-brutal-lime px-2 py-0.5 text-[10px] font-black uppercase text-black shadow-brutal-sm rotate-6">
+            ★ PRO
+          </div>
+
+          <div className="relative w-full aspect-[4/5] rounded-[36px] border-4 border-foreground bg-gradient-to-br from-brutal-pink via-brutal-pink/90 to-primary/40 p-2.5 shadow-brutal-lg overflow-hidden flex flex-col justify-end">
             <Image
               src="https://i.postimg.cc/VkJVJGJC/circulardp.webp"
               alt="Abhishek Kumar"
-              width={260}
-              height={260}
-              className="border-2 border-foreground object-cover aspect-square w-full filter contrast-110"
+              width={340}
+              height={420}
+              className="w-full h-full object-cover rounded-[28px] border-2 border-foreground filter contrast-105"
               priority
             />
-            <div className="mt-2 border-2 border-foreground bg-black px-2 py-1 text-center text-[10px] sm:text-xs font-black uppercase text-white tracking-widest">
+            <div className="absolute bottom-4 left-4 right-4 border-2 border-foreground bg-black/90 backdrop-blur-xs px-3 py-1.5 text-center text-[10px] sm:text-xs font-black uppercase text-white tracking-widest shadow-brutal-sm">
               ABHISHEK KUMAR
             </div>
           </div>
