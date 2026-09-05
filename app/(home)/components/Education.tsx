@@ -35,7 +35,7 @@ const educationHistory = [
 
 const Education = () => {
   return (
-    <section className="mx-auto mt-8 sm:mt-12 mb-10 sm:mb-12 w-full max-w-7xl" id="education">
+    <section className="mx-auto mt-8 sm:mt-12 mb-10 sm:mb-12 w-full" id="education">
       <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-2 border-b-3 sm:border-b-4 border-foreground pb-2 sm:pb-3">
         <div>
           <span className="inline-block border-2 border-foreground bg-primary px-2 py-0.5 text-[10px] sm:text-xs font-black uppercase text-primary-foreground shadow-brutal-sm">
@@ -59,29 +59,29 @@ const Education = () => {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                  <span className={`border-2 border-foreground ${edu.badgeBg} px-2 py-0.5 text-[9px] sm:text-[10px] font-black uppercase text-black shadow-brutal-sm`}>
+                  <span className={`border-2 border-foreground ${edu.badgeBg} px-2.5 py-0.5 text-xs font-black uppercase text-black shadow-brutal-sm`}>
                     {edu.tag}
                   </span>
-                  <span className="border border-foreground bg-muted px-2 py-0.5 text-[9px] font-mono font-bold uppercase text-foreground">
+                  <span className="border border-foreground bg-muted px-2.5 py-0.5 text-xs font-mono font-bold uppercase text-foreground">
                     {edu.status}
                   </span>
                 </div>
-                <h3 className="text-base sm:text-lg font-black uppercase tracking-tight flex items-center gap-2 text-foreground">
-                  <FaGraduationCap className="h-4 w-4 text-primary shrink-0" />
+                <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight flex items-center gap-2 text-foreground">
+                  <FaGraduationCap className="h-5 w-5 text-primary shrink-0" />
                   <span>{edu.degree}</span>
                 </h3>
-                <p className="mt-1 text-xs sm:text-sm font-bold text-muted-foreground">
+                <p className="mt-1 text-sm sm:text-base font-bold text-muted-foreground">
                   {edu.institution}
                 </p>
               </div>
 
               <div className="sm:text-right shrink-0 border-t sm:border-t-0 border-foreground/20 pt-2 sm:pt-0">
-                <p className="inline-flex sm:flex items-center sm:justify-end gap-1.5 text-xs font-black text-foreground">
-                  <FaCalendarAlt className="h-3 w-3 text-primary" />
+                <p className="inline-flex sm:flex items-center sm:justify-end gap-1.5 text-sm sm:text-base font-black text-foreground">
+                  <FaCalendarAlt className="h-3.5 w-3.5 text-primary" />
                   <span>{edu.duration}</span>
                 </p>
-                <p className="flex items-center sm:justify-end gap-1.5 text-[11px] font-semibold text-muted-foreground mt-0.5">
-                  <FaMapMarkerAlt className="h-3 w-3 text-muted-foreground" />
+                <p className="flex items-center sm:justify-end gap-1.5 text-xs sm:text-sm font-bold text-muted-foreground mt-1">
+                  <FaMapMarkerAlt className="h-3.5 w-3.5 text-muted-foreground" />
                   <span>{edu.location}</span>
                 </p>
               </div>

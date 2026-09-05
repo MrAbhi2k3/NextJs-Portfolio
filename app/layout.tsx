@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={`${ysabeauOffice.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

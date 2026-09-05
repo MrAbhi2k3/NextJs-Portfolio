@@ -65,6 +65,8 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-family: var(--font-ysabeau), sans-serif;
+    font-size: 1.0625rem; /* ~17px base size */
+    line-height: 1.6;
     letter-spacing: -0.01em;
     overflow-x: hidden;
   }

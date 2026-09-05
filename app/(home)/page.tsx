@@ -22,7 +22,7 @@ const Page = () => {
       <div className="relative z-10">
         <Header />
 
-        <main className="mx-auto w-full max-w-7xl px-3 sm:px-6 md:px-8 pt-4 pb-6">
+        <main className="mx-auto w-full px-4 sm:px-8 lg:px-12 pt-4 pb-6">
           <Navbar />
           <HeroSection />
           <Services />

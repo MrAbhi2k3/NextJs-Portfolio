@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-2 z-30 mb-8 w-full">
-      <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-2 border-2 sm:border-4 border-foreground bg-card p-2.5 sm:p-4 shadow-brutal sm:shadow-brutal-lg">
+      <div className="mx-auto flex w-full flex-wrap items-center justify-between gap-2 border-2 sm:border-4 border-foreground bg-card p-2.5 sm:p-4 shadow-brutal sm:shadow-brutal-lg">
         <Link
           href="/"
           className="bg-primary px-2 sm:px-3 py-1 text-sm sm:text-xl font-black tracking-tight text-primary-foreground border-2 border-foreground uppercase transition hover:translate-x-0.5 hover:translate-y-0.5"

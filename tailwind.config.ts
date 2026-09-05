@@ -13,6 +13,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '2xs': ['0.75rem', { lineHeight: '1rem' }],    // 12px (replaces tiny 10px)
+        'xs': ['0.84rem', { lineHeight: '1.25rem' }],   // ~13.5px (up from 12px)
+        'sm': ['0.95rem', { lineHeight: '1.45rem' }],   // ~15.2px (up from 14px)
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

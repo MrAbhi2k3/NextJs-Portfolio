@@ -4,7 +4,7 @@ import { FaEnvelope, FaBolt, FaTerminal, FaCode } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="brutal-card mx-auto w-full max-w-7xl bg-card p-4 sm:p-7 md:p-10 mb-10 overflow-hidden">
+    <section className="brutal-card mx-auto w-full bg-card p-4 sm:p-7 md:p-10 mb-10 overflow-hidden">
       <div className="grid items-center gap-8 md:grid-cols-[1.3fr,1fr]">
         <div className="space-y-4 sm:space-y-5">
           <div className="flex flex-wrap items-center gap-2">

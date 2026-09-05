@@ -41,7 +41,7 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <section className="mx-auto mt-8 sm:mt-12 mb-10 sm:mb-12 w-full max-w-7xl" id="achievements">
+    <section className="mx-auto mt-8 sm:mt-12 mb-10 sm:mb-12 w-full" id="achievements">
       <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-2 border-b-3 sm:border-b-4 border-foreground pb-2 sm:pb-3">
         <div>
           <span className="inline-block border-2 border-foreground bg-primary px-2 py-0.5 text-[10px] sm:text-xs font-black uppercase text-primary-foreground shadow-brutal-sm">

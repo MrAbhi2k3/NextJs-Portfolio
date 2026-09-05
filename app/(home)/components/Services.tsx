@@ -41,7 +41,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="mx-auto mt-8 sm:mt-12 mb-10 sm:mb-12 w-full max-w-7xl" id="services">
+    <section className="mx-auto mt-8 sm:mt-12 mb-10 sm:mb-12 w-full" id="services">
       <div className="border-3 sm:border-4 border-foreground bg-card p-4 sm:p-6 shadow-brutal mb-4">
         <p className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-muted-foreground">
           Passion led us here
