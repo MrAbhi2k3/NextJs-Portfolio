@@ -129,3 +129,42 @@
   background-size: 24px 24px;
   animation: brutal-dots-move 20s linear infinite;
 }
+
+@keyframes hero-float-code {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-3deg) scale(1.04);
+  }
+}
+
+@keyframes hero-float-bolt {
+  0%, 100% {
+    transform: translateY(0px) rotate(12deg) scale(1);
+  }
+  50% {
+    transform: translateY(7px) rotate(18deg) scale(1.1);
+  }
+}
+
+@keyframes hero-float-pro {
+  0%, 100% {
+    transform: translateY(0px) rotate(6deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg) scale(1.05);
+  }
+}
+
+.animate-hero-code {
+  animation: hero-float-code 3.5s ease-in-out infinite;
+}
+
+.animate-hero-bolt {
+  animation: hero-float-bolt 2.8s ease-in-out infinite;
+}
+
+.animate-hero-pro {
+  animation: hero-float-pro 3.2s ease-in-out infinite 0.4s;
+}
