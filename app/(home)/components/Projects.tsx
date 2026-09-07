@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Aurenza UI",
     description: "Modern, highly accessible, and modular design system & UI component library engineered for high-performance React and Next.js web applications.",
-    link: "https://aurenz-ui.vercel.app",
+    link: "https://aurenza-ui.vercel.app",
     tag: "FEATURED FLAGSHIP",
     tagBg: "bg-brutal-lime",
     stack: ["React", "TypeScript", "Tailwind CSS", "Storybook"],

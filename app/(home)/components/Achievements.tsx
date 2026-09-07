@@ -1,3 +1,5 @@
+// Brutal Neo - Abhishek Kumar 
+
 import { FaTrophy, FaCalendarAlt, FaStar } from "react-icons/fa";
 
 const achievements = [
