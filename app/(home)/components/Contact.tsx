@@ -17,33 +17,45 @@ const Contact = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [botCheck, setBotCheck] = useState("");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { name, email, tgUsername, subject, message } = formData;
-
-    const MessageSent = `Name: ${name}\n\nEmail & Username of User \nEmail: ${email}\nTelegram Username: @${tgUsername}\n\nReason of Messaging \nSubject: ${subject}\n\nDetails Reason of Message \nMessage: ${message}`;
-    const BotToken = "5228779518:AAEmEY8_dHJ4LXOefuPpWzXnEWHSnSrwA_0";
-    const ChatID = "-1002143952930";
-    const msglinker = `https://api.telegram.org/bot${BotToken}/sendMessage`;
+    setIsLoading(true);
+    setErrorMessage("");
 
     try {
-      await fetch(msglinker, {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: ChatID, text: MessageSent }),
+        body: JSON.stringify({
+          ...formData,
+          botCheck
+        }),
       });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
 
       setSuccessMessage("Message sent to MrAbhi2k3!");
       setFormData({ name: "", email: "", tgUsername: "", subject: "", message: "" });
-
-      setTimeout(() => setSuccessMessage(""), 3000);
-    } catch (error) {
+      setTimeout(() => setSuccessMessage(""), 4000);
+    } catch (error: unknown) {
       console.error(error);
-      setSuccessMessage("Failed to send message. Try again.");
+      const msg = error instanceof Error ? error.message : "Failed to send message. Try again.";
+      setErrorMessage(msg);
+      setTimeout(() => setErrorMessage(""), 4000);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -99,13 +111,27 @@ const Contact = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3 p-3 sm:p-4">
+              {/* Invisible Honeypot Field for Automated Spambots */}
+              <input
+                type="text"
+                name="company_name_hp"
+                value={botCheck}
+                onChange={(e) => setBotCheck(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="YOUR NAME"
-                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none"
+                disabled={isLoading}
+                maxLength={80}
+                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none disabled:opacity-50"
                 required
               />
               <input
@@ -114,7 +140,9 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="YOUR EMAIL"
-                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none"
+                disabled={isLoading}
+                maxLength={100}
+                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none disabled:opacity-50"
                 required
               />
               <input
@@ -123,8 +151,9 @@ const Contact = () => {
                 value={formData.tgUsername}
                 onChange={handleChange}
                 placeholder="TELEGRAM USERNAME (WITHOUT @)"
-                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none"
-                required
+                disabled={isLoading}
+                maxLength={50}
+                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none disabled:opacity-50"
               />
               <input
                 type="text"
@@ -132,7 +161,9 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="SUBJECT"
-                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none"
+                disabled={isLoading}
+                maxLength={120}
+                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none disabled:opacity-50"
                 required
               />
               <textarea
@@ -141,21 +172,30 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="YOUR MESSAGE..."
                 rows={3}
-                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none resize-none"
+                disabled={isLoading}
+                maxLength={1500}
+                className="w-full border-2 border-foreground bg-background px-3 py-2 text-xs font-bold uppercase placeholder:text-muted-foreground focus:bg-brutal-yellow/20 focus:outline-none resize-none disabled:opacity-50"
                 required
               />
               <button
                 type="submit"
-                className="brutal-btn w-full bg-brutal-lime py-2.5 text-xs font-black uppercase text-black tracking-wider hover:bg-brutal-yellow transition"
+                disabled={isLoading}
+                className="brutal-btn w-full bg-brutal-lime py-2.5 text-xs font-black uppercase text-black tracking-wider hover:bg-brutal-yellow transition disabled:opacity-60 cursor-pointer"
               >
-                Send Message
+                {isLoading ? "SENDING..." : "SEND MESSAGE"}
               </button>
             </form>
           </div>
 
           {successMessage && (
-            <div className="fixed bottom-24 right-4 sm:right-6 z-[10001] border-3 sm:border-4 border-foreground bg-brutal-lime p-3 text-xs font-black uppercase text-black shadow-brutal-lg">
-              {successMessage}
+            <div className="fixed bottom-24 right-4 sm:right-6 z-[10001] border-3 sm:border-4 border-foreground bg-brutal-lime p-3 text-xs font-black uppercase text-black shadow-brutal-lg animate-bounce">
+              ✓ {successMessage}
+            </div>
+          )}
+
+          {errorMessage && (
+            <div className="fixed bottom-24 right-4 sm:right-6 z-[10001] border-3 sm:border-4 border-foreground bg-brutal-pink p-3 text-xs font-black uppercase text-white shadow-brutal-lg">
+              ✕ {errorMessage}
             </div>
           )}
         </div>
